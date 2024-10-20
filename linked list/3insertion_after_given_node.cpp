@@ -16,6 +16,17 @@ struct Node{
     }
     cout<<endl;
  }
+ void insertafter(Node* head,int key, int newdata){
+    while(head->next!=NULL){
+        head=head->next;
+        if(head->data==key){
+            Node* newnode = new Node(newdata);
+            newnode->next=head->next;
+            head->next=newnode;
+            
+}
+    }
+ }
 
 int main(){
     Node* head= new Node(1);
@@ -25,7 +36,8 @@ int main(){
     head->next->next->next->next =new Node(6);
     display(head);
     //insert 3 after 2;
-    insertafter()
+    insertafter(head,2,3);
+    display(head);
 
 
     return 0;
